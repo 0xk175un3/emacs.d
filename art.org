@@ -107,7 +107,7 @@
 (set-face-attribute 'default nil
   :family "PragmataPro Mono Liga"
   :weight 'light'
-  :height 210)
+  :height 230)
 #+end_src
 - Pragmata Ligatures
 #+begin_src emacs-lisp
@@ -745,6 +745,17 @@
     ("C-M-%" . anzu-query-replace-regexp)))
 #+end_src
 * UI
+- Tree Sitter
+#+begin_src emacs-lisp
+(use-package tree-sitter
+  :ensure t
+  :config
+    (add-hook 'ruby-mode-hook #'tree-sitter-mode))
+(use-package tree-sitter-langs
+  :ensure t
+  :config
+    (add-hook 'ruby-mode-hook #'tree-sitter-hl-mode))
+#+end_src
 - Whitespaces
 #+begin_src emacs-lisp
 (use-package whitespace

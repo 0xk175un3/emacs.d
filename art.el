@@ -96,7 +96,7 @@
 (set-face-attribute 'default nil
   :family "PragmataPro Mono Liga"
   :weight 'light'
-  :height 210)
+  :height 230)
 
 (eval-when-compile (defconst pragmatapro-lig-alist
   '(("[ERROR]" #Xe2c0)
@@ -688,6 +688,15 @@
   :bind (
     ("M-%" . anzu-query-replace)
     ("C-M-%" . anzu-query-replace-regexp)))
+
+(use-package tree-sitter
+  :ensure t
+  :config
+    (add-hook 'ruby-mode-hook #'tree-sitter-mode))
+(use-package tree-sitter-langs
+  :ensure t
+  :config
+    (add-hook 'ruby-mode-hook #'tree-sitter-hl-mode))
 
 (use-package whitespace
   :ensure t
